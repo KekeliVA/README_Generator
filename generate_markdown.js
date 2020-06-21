@@ -59,14 +59,14 @@ function generateMarkdown(data) {
 
 // write the three functions 
 // for license badge ../images../ comes in form of SVG file, look up license and badging
-function renderLicenseBadge() {
-`apm/1/${data.license}` 
+function renderLicenseBadge(data.license) {
+  `apm/1/${data.license}` 
 }
 
-function renderLicenseLink() {
+function renderLicenseLink(data.license) {
   `https://img.shields.io/badge/${data.license}-${data.username}-blue`
 }
 
-function renderLicenseSection() {
+function renderLicenseSection(data.license) {
   
 }

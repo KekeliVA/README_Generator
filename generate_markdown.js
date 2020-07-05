@@ -1,6 +1,7 @@
 /* */
 
 function generateMarkdown(data) {
+  console.log(data);
   return `# ${data.title}
   ${renderLicenseBadge(data.license)}
 
@@ -14,7 +15,7 @@ function generateMarkdown(data) {
   
   * [Usage](#usage)
 
-  ${renderLicenseLink(data.license)}
+  ${renderLicenseLink(data.license, data.username)}
 
   * [Contributing](#contributing)
 
@@ -32,7 +33,7 @@ function generateMarkdown(data) {
 
   ${data.usage}
 
-  ${renderLicenseSection(data.license)}
+  
 
   ## Contributing 
 
@@ -59,14 +60,19 @@ function generateMarkdown(data) {
 
 // write the three functions 
 // for license badge ../images../ comes in form of SVG file, look up license and badging
-function renderLicenseBadge(data.license) {
-  `apm/1/${data.license}` 
+function renderLicenseBadge(license) {
+  return `apm/1/${license}` 
 }
 
-function renderLicenseLink(data.license) {
-  `https://img.shields.io/badge/${data.license}-${data.username}-blue`
+function renderLicenseLink(license, username) {
+  return `https://img.shields.io/badge/${license}-${username}-blue`
 }
 
-function renderLicenseSection(data.license) {
-  
+module.exports = generateMarkdown;
+
+/*
+function renderLicenseSection() {
+  $('p').append()
 }
+${renderLicenseSection(data.license)} 
+*/

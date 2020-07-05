@@ -2,6 +2,9 @@ var inquirer = require("inquirer");
 var fs = require("fs");
 var path = require("path");
 var generateMarkdown = require("./generate_markdown");
+// const { generate } = require("rxjs");
+
+console.log(generateMarkdown);
 
 // function to ask questions and gather responses
 var questions = [
@@ -55,7 +58,8 @@ function gatherQuestions() {
   inquirer.prompt(questions)
   .then((response) => {
     console.log("generating README");
-    writeREADME("README.md", generateMarkdown({response}));
+    console.log(response);
+    writeREADME("README.md", generateMarkdown(response));
   })
 }
 
@@ -65,3 +69,4 @@ function writeREADME(fileName, response) {
 
 gatherQuestions();
 // function to write reponses to files
+
